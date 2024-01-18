@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                cat 'index.html'
+                sh 'cat index.html'
             }
         }
     }
