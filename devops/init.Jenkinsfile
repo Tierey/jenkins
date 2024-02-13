@@ -1,5 +1,5 @@
 node {
     checkout scm
-    jobDsl scriptText:"job('a1')"
+    sh "./devops/init.sh"
     jobDsl targets:["./devops/dsl/*.groovy"].join('\n')
 }
