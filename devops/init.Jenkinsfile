@@ -1,8 +1,5 @@
 node {
     checkout scm
-    //sh "cp -R ../../dsl-jobs ./jobs"
-    sh "ls -la"
-    sh "ls -la .."
-    sh "ls -la ../.."
+    jobDsl scriptText:"job('a1')"
     jobDsl targets:["./devops/dsl/*.groovy"].join('\n')
 }
