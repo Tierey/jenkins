@@ -1,2 +1,2 @@
 jenkins:
-  numExecutors: 3
+  numExecutors: 1
