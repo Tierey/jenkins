@@ -2,9 +2,10 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 OWNER_NAME=$(git config --get remote.origin.url | sed 's/.*\/\([^ ]*\)\/[^.]*.*/\1/')
 PROJECT_NAME=$(git config --get remote.origin.url | sed 's/.*\/[^ ]*\/\([^.]*\).*/\1/')
+JCASC=$CASC_JENKINS_CONFIG/$OWNER_NAME/$PROJECT_NAME
 echo "helo world from $SCRIPT_DIR"
-mkdir -p $CASC_JENKINS_CONFIG/$OWNER_NAME/$PROJECT_NAME
-cp -rf $SCRIPT_DIR/jcasc $CASC_JENKINS_CONFIG/$OWNER_NAME/$PROJECT_NAME
+mkdir -p $JCASC
+cp -rf $SCRIPT_DIR/jcasc $JCASC
 jcli reload-jcasc-configuration
 
 echo "update-plugins"
