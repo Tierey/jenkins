@@ -12,5 +12,5 @@ echo "plugins : $UPDATE_LIST"
 if [ ! -z "${UPDATE_LIST}" ]; then 
     echo Updating Jenkins Plugins: ${UPDATE_LIST}; 
     jcli install-plugin ${UPDATE_LIST};
-    #$jcli safe-restart;
+    jcli safe-restart;
 fi
