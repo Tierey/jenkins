@@ -5,7 +5,8 @@ PROJECT_NAME=$(git config --get remote.origin.url | sed 's/.*\/[^ ]*\/\([^.]*\).
 JCASC=$CASC_JENKINS_CONFIG/$OWNER_NAME/$PROJECT_NAME
 echo "helo world from $SCRIPT_DIR"
 mkdir -p $JCASC
-cp -rf $SCRIPT_DIR/jcasc $JCASC
+shopt -s globstar dotglob
+cp -rf $SCRIPT_DIR/jcasc/**/* $JCASC
 jcli reload-jcasc-configuration
 
 echo "update-plugins"
