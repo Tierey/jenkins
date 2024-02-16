@@ -3,5 +3,5 @@ node {
     
     sh "chmod 777 ./devops/init.sh"
     sh "./devops/init.sh"
-    jobDsl targets:["./devops/dsl/*.groovy"].join('\n')
+    jobDsl targets:["./devops/dsl/*.groovy"].join('\n') //, removedJobAction : 'DELETE'
 }
